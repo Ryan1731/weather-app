@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App in Node.js & Express</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <fieldset>
+                <form action="/" method="post">
+                    <div class="search-bar">
+                        <input type="text" name="city" placeholder="Enter City Name" class="search-input">
+                        <button type="submit" class="submit-button" value="Search Location">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </fieldset>
+
+            <section id="main-info">
+                <div class="owi owi-<%=weatherIcon%>"></div>
+                <div class="main-info-text">
+                    <% if (weather !== null) { %>
+                        <span class="city-text"><%=city%></span>
+                        <span class="temp-text"><%=weather%></span>
+                     <%}%>
+                    <% if (error !== null) {%>
+                        <p><%=error%></p>
+                    <%}%>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+<script src="https://kit.fontawesome.com/517e100b5b.js" crossorigin="anonymous"></script>
+</html>
